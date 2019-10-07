@@ -1,6 +1,6 @@
 /*
- * starwars-api.com
- * Azure Functions with some Swagger
+ * SWAPI
+ * Welcome to the swapi, the Star Wars API! This documentation should help you familiarise yourself with the resources available and how to consume them with HTTP requests. If you're after a native helper library then I suggest you scroll down and check out what's available. Read through the getting started section before you dive in. Most of your problems should be solved just by reading through it. 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -18,6 +18,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
@@ -26,38 +29,78 @@ import javax.validation.Valid;
  * Planet
  */
 @JsonPropertyOrder({
-  Planet.JSON_PROPERTY_ID,
-  Planet.JSON_PROPERTY_NAME
+  Planet.JSON_PROPERTY_NAME,
+  Planet.JSON_PROPERTY_ROTATION_PERIOD,
+  Planet.JSON_PROPERTY_ORBITAL_PERIOD,
+  Planet.JSON_PROPERTY_DIAMETER,
+  Planet.JSON_PROPERTY_CLIMATE,
+  Planet.JSON_PROPERTY_TERRAIN,
+  Planet.JSON_PROPERTY_SURFACE_WATER,
+  Planet.JSON_PROPERTY_POPULATION,
+  Planet.JSON_PROPERTY_RESIDENTS,
+  Planet.JSON_PROPERTY_FILMS,
+  Planet.JSON_PROPERTY_CREATED,
+  Planet.JSON_PROPERTY_EDITED,
+  Planet.JSON_PROPERTY_GRAVITY,
+  Planet.JSON_PROPERTY_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2019-10-07T21:01:59.397+02:00[Europe/Belgrade]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2019-10-07T21:37:51.541+02:00[Europe/Belgrade]")
 public class Planet   {
-  public static final String JSON_PROPERTY_ID = "id";
-  @JsonProperty(JSON_PROPERTY_ID)
-  private Integer id;
-
   public static final String JSON_PROPERTY_NAME = "name";
   @JsonProperty(JSON_PROPERTY_NAME)
   private String name;
 
-  public Planet id(Integer id) {
-    this.id = id;
-    return this;
-  }
+  public static final String JSON_PROPERTY_ROTATION_PERIOD = "rotation_period";
+  @JsonProperty(JSON_PROPERTY_ROTATION_PERIOD)
+  private String rotationPeriod;
 
-  /**
-   * Unique identifier representing a specific planet.
-   * @return id
-   **/
-  @JsonProperty("id")
-  @ApiModelProperty(value = "Unique identifier representing a specific planet.")
-  
-  public Integer getId() {
-    return id;
-  }
+  public static final String JSON_PROPERTY_ORBITAL_PERIOD = "orbital_period";
+  @JsonProperty(JSON_PROPERTY_ORBITAL_PERIOD)
+  private String orbitalPeriod;
 
-  public void setId(Integer id) {
-    this.id = id;
-  }
+  public static final String JSON_PROPERTY_DIAMETER = "diameter";
+  @JsonProperty(JSON_PROPERTY_DIAMETER)
+  private String diameter;
+
+  public static final String JSON_PROPERTY_CLIMATE = "climate";
+  @JsonProperty(JSON_PROPERTY_CLIMATE)
+  private String climate;
+
+  public static final String JSON_PROPERTY_TERRAIN = "terrain";
+  @JsonProperty(JSON_PROPERTY_TERRAIN)
+  private String terrain;
+
+  public static final String JSON_PROPERTY_SURFACE_WATER = "surface_water";
+  @JsonProperty(JSON_PROPERTY_SURFACE_WATER)
+  private String surfaceWater;
+
+  public static final String JSON_PROPERTY_POPULATION = "population";
+  @JsonProperty(JSON_PROPERTY_POPULATION)
+  private String population;
+
+  public static final String JSON_PROPERTY_RESIDENTS = "residents";
+  @JsonProperty(JSON_PROPERTY_RESIDENTS)
+  private List<String> residents = null;
+
+  public static final String JSON_PROPERTY_FILMS = "films";
+  @JsonProperty(JSON_PROPERTY_FILMS)
+  private List<String> films = null;
+
+  public static final String JSON_PROPERTY_CREATED = "created";
+  @JsonProperty(JSON_PROPERTY_CREATED)
+  private Date created;
+
+  public static final String JSON_PROPERTY_EDITED = "edited";
+  @JsonProperty(JSON_PROPERTY_EDITED)
+  private Date edited;
+
+  public static final String JSON_PROPERTY_GRAVITY = "gravity";
+  @JsonProperty(JSON_PROPERTY_GRAVITY)
+  private String gravity;
+
+  public static final String JSON_PROPERTY_URL = "url";
+  @JsonProperty(JSON_PROPERTY_URL)
+  private String url;
 
   public Planet name(String name) {
     this.name = name;
@@ -65,11 +108,11 @@ public class Planet   {
   }
 
   /**
-   * Display name of planet.
+   * Get name
    * @return name
    **/
   @JsonProperty("name")
-  @ApiModelProperty(value = "Display name of planet.")
+  @ApiModelProperty(value = "")
   
   public String getName() {
     return name;
@@ -77,6 +120,282 @@ public class Planet   {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public Planet rotationPeriod(String rotationPeriod) {
+    this.rotationPeriod = rotationPeriod;
+    return this;
+  }
+
+  /**
+   * Get rotationPeriod
+   * @return rotationPeriod
+   **/
+  @JsonProperty("rotation_period")
+  @ApiModelProperty(value = "")
+  
+  public String getRotationPeriod() {
+    return rotationPeriod;
+  }
+
+  public void setRotationPeriod(String rotationPeriod) {
+    this.rotationPeriod = rotationPeriod;
+  }
+
+  public Planet orbitalPeriod(String orbitalPeriod) {
+    this.orbitalPeriod = orbitalPeriod;
+    return this;
+  }
+
+  /**
+   * Get orbitalPeriod
+   * @return orbitalPeriod
+   **/
+  @JsonProperty("orbital_period")
+  @ApiModelProperty(value = "")
+  
+  public String getOrbitalPeriod() {
+    return orbitalPeriod;
+  }
+
+  public void setOrbitalPeriod(String orbitalPeriod) {
+    this.orbitalPeriod = orbitalPeriod;
+  }
+
+  public Planet diameter(String diameter) {
+    this.diameter = diameter;
+    return this;
+  }
+
+  /**
+   * Get diameter
+   * @return diameter
+   **/
+  @JsonProperty("diameter")
+  @ApiModelProperty(value = "")
+  
+  public String getDiameter() {
+    return diameter;
+  }
+
+  public void setDiameter(String diameter) {
+    this.diameter = diameter;
+  }
+
+  public Planet climate(String climate) {
+    this.climate = climate;
+    return this;
+  }
+
+  /**
+   * Get climate
+   * @return climate
+   **/
+  @JsonProperty("climate")
+  @ApiModelProperty(value = "")
+  
+  public String getClimate() {
+    return climate;
+  }
+
+  public void setClimate(String climate) {
+    this.climate = climate;
+  }
+
+  public Planet terrain(String terrain) {
+    this.terrain = terrain;
+    return this;
+  }
+
+  /**
+   * Get terrain
+   * @return terrain
+   **/
+  @JsonProperty("terrain")
+  @ApiModelProperty(value = "")
+  
+  public String getTerrain() {
+    return terrain;
+  }
+
+  public void setTerrain(String terrain) {
+    this.terrain = terrain;
+  }
+
+  public Planet surfaceWater(String surfaceWater) {
+    this.surfaceWater = surfaceWater;
+    return this;
+  }
+
+  /**
+   * Get surfaceWater
+   * @return surfaceWater
+   **/
+  @JsonProperty("surface_water")
+  @ApiModelProperty(value = "")
+  
+  public String getSurfaceWater() {
+    return surfaceWater;
+  }
+
+  public void setSurfaceWater(String surfaceWater) {
+    this.surfaceWater = surfaceWater;
+  }
+
+  public Planet population(String population) {
+    this.population = population;
+    return this;
+  }
+
+  /**
+   * Get population
+   * @return population
+   **/
+  @JsonProperty("population")
+  @ApiModelProperty(value = "")
+  
+  public String getPopulation() {
+    return population;
+  }
+
+  public void setPopulation(String population) {
+    this.population = population;
+  }
+
+  public Planet residents(List<String> residents) {
+    this.residents = residents;
+    return this;
+  }
+
+  public Planet addResidentsItem(String residentsItem) {
+    if (this.residents == null) {
+      this.residents = new ArrayList<String>();
+    }
+    this.residents.add(residentsItem);
+    return this;
+  }
+
+  /**
+   * Get residents
+   * @return residents
+   **/
+  @JsonProperty("residents")
+  @ApiModelProperty(value = "")
+  
+  public List<String> getResidents() {
+    return residents;
+  }
+
+  public void setResidents(List<String> residents) {
+    this.residents = residents;
+  }
+
+  public Planet films(List<String> films) {
+    this.films = films;
+    return this;
+  }
+
+  public Planet addFilmsItem(String filmsItem) {
+    if (this.films == null) {
+      this.films = new ArrayList<String>();
+    }
+    this.films.add(filmsItem);
+    return this;
+  }
+
+  /**
+   * Get films
+   * @return films
+   **/
+  @JsonProperty("films")
+  @ApiModelProperty(value = "")
+  
+  public List<String> getFilms() {
+    return films;
+  }
+
+  public void setFilms(List<String> films) {
+    this.films = films;
+  }
+
+  public Planet created(Date created) {
+    this.created = created;
+    return this;
+  }
+
+  /**
+   * Get created
+   * @return created
+   **/
+  @JsonProperty("created")
+  @ApiModelProperty(value = "")
+  
+  public Date getCreated() {
+    return created;
+  }
+
+  public void setCreated(Date created) {
+    this.created = created;
+  }
+
+  public Planet edited(Date edited) {
+    this.edited = edited;
+    return this;
+  }
+
+  /**
+   * Get edited
+   * @return edited
+   **/
+  @JsonProperty("edited")
+  @ApiModelProperty(value = "")
+  
+  public Date getEdited() {
+    return edited;
+  }
+
+  public void setEdited(Date edited) {
+    this.edited = edited;
+  }
+
+  public Planet gravity(String gravity) {
+    this.gravity = gravity;
+    return this;
+  }
+
+  /**
+   * Get gravity
+   * @return gravity
+   **/
+  @JsonProperty("gravity")
+  @ApiModelProperty(value = "")
+  
+  public String getGravity() {
+    return gravity;
+  }
+
+  public void setGravity(String gravity) {
+    this.gravity = gravity;
+  }
+
+  public Planet url(String url) {
+    this.url = url;
+    return this;
+  }
+
+  /**
+   * Get url
+   * @return url
+   **/
+  @JsonProperty("url")
+  @ApiModelProperty(value = "")
+  
+  public String getUrl() {
+    return url;
+  }
+
+  public void setUrl(String url) {
+    this.url = url;
   }
 
 
@@ -89,13 +408,25 @@ public class Planet   {
       return false;
     }
     Planet planet = (Planet) o;
-    return Objects.equals(this.id, planet.id) &&
-        Objects.equals(this.name, planet.name);
+    return Objects.equals(this.name, planet.name) &&
+        Objects.equals(this.rotationPeriod, planet.rotationPeriod) &&
+        Objects.equals(this.orbitalPeriod, planet.orbitalPeriod) &&
+        Objects.equals(this.diameter, planet.diameter) &&
+        Objects.equals(this.climate, planet.climate) &&
+        Objects.equals(this.terrain, planet.terrain) &&
+        Objects.equals(this.surfaceWater, planet.surfaceWater) &&
+        Objects.equals(this.population, planet.population) &&
+        Objects.equals(this.residents, planet.residents) &&
+        Objects.equals(this.films, planet.films) &&
+        Objects.equals(this.created, planet.created) &&
+        Objects.equals(this.edited, planet.edited) &&
+        Objects.equals(this.gravity, planet.gravity) &&
+        Objects.equals(this.url, planet.url);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name);
+    return Objects.hash(name, rotationPeriod, orbitalPeriod, diameter, climate, terrain, surfaceWater, population, residents, films, created, edited, gravity, url);
   }
 
 
@@ -104,8 +435,20 @@ public class Planet   {
     StringBuilder sb = new StringBuilder();
     sb.append("class Planet {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    rotationPeriod: ").append(toIndentedString(rotationPeriod)).append("\n");
+    sb.append("    orbitalPeriod: ").append(toIndentedString(orbitalPeriod)).append("\n");
+    sb.append("    diameter: ").append(toIndentedString(diameter)).append("\n");
+    sb.append("    climate: ").append(toIndentedString(climate)).append("\n");
+    sb.append("    terrain: ").append(toIndentedString(terrain)).append("\n");
+    sb.append("    surfaceWater: ").append(toIndentedString(surfaceWater)).append("\n");
+    sb.append("    population: ").append(toIndentedString(population)).append("\n");
+    sb.append("    residents: ").append(toIndentedString(residents)).append("\n");
+    sb.append("    films: ").append(toIndentedString(films)).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
+    sb.append("    edited: ").append(toIndentedString(edited)).append("\n");
+    sb.append("    gravity: ").append(toIndentedString(gravity)).append("\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("}");
     return sb.toString();
   }
