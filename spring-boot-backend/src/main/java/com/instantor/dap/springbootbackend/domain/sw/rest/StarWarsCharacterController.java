@@ -2,11 +2,10 @@ package com.instantor.dap.springbootbackend.domain.sw.rest;
 
 import com.instantor.dap.springbootbackend.core.dto.ApiErrorResponse;
 import com.instantor.dap.springbootbackend.domain.sw.dto.CharacterDto;
-import com.instantor.dap.springbootbackend.domain.sw.services.SwapiClientInterface;
 import com.instantor.dap.springbootbackend.domain.sw.mapper.CharacterMapper;
+import com.instantor.dap.springbootbackend.domain.sw.services.SwapiClientInterface;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
 
@@ -47,11 +46,10 @@ public class StarWarsCharacterController {
     }
 
     @ExceptionHandler(value = {HttpClientErrorException.class})
-    public ApiErrorResponse handleException(HttpClientErrorException exception) {
-        return new ApiErrorResponse(
-                exception.getStatusCode(),
+    public ResponseEntity handleException(HttpClientErrorException exception) {
+        return new ResponseEntity(new ApiErrorResponse(
                 exception.getStatusText(),
                 exception.getMessage()
-        );
+        ), exception.getStatusCode());
     }
 }
