@@ -146,6 +146,8 @@ definitions:
     properties:
       name:
         type: string
+      skin_color:
+        type: string
       birth_year:
         type: string
       eye_color:
@@ -158,11 +160,29 @@ definitions:
         type: string
       mass:
         type: string
+      url:
+        type: string
+      created:
+        type: string
+        format: date-time
+      edited:
+        type: string
+        format: date-time
+      homeworld:
+        type: string
       films:
         type: array
         items:
           type: string
+      species:
+        type: array
+        items:
+          type: string
       starships:
+        type: array
+        items:
+          type: string
+      vehicles:
         type: array
         items:
           type: string

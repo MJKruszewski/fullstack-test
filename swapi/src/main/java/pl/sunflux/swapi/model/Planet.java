@@ -44,7 +44,7 @@ import javax.validation.Valid;
   Planet.JSON_PROPERTY_GRAVITY,
   Planet.JSON_PROPERTY_URL
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2019-10-07T21:37:51.541+02:00[Europe/Belgrade]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2019-10-07T23:20:46.085+02:00[Europe/Belgrade]")
 public class Planet   {
   public static final String JSON_PROPERTY_NAME = "name";
   @JsonProperty(JSON_PROPERTY_NAME)

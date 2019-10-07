@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import javax.validation.constraints.*;
@@ -29,20 +30,31 @@ import javax.validation.Valid;
  */
 @JsonPropertyOrder({
   People.JSON_PROPERTY_NAME,
+  People.JSON_PROPERTY_SKIN_COLOR,
   People.JSON_PROPERTY_BIRTH_YEAR,
   People.JSON_PROPERTY_EYE_COLOR,
   People.JSON_PROPERTY_GENDER,
   People.JSON_PROPERTY_HAIR_COLOR,
   People.JSON_PROPERTY_HEIGHT,
   People.JSON_PROPERTY_MASS,
+  People.JSON_PROPERTY_URL,
+  People.JSON_PROPERTY_CREATED,
+  People.JSON_PROPERTY_EDITED,
+  People.JSON_PROPERTY_HOMEWORLD,
   People.JSON_PROPERTY_FILMS,
-  People.JSON_PROPERTY_STARSHIPS
+  People.JSON_PROPERTY_SPECIES,
+  People.JSON_PROPERTY_STARSHIPS,
+  People.JSON_PROPERTY_VEHICLES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2019-10-07T21:37:51.541+02:00[Europe/Belgrade]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2019-10-07T23:20:46.085+02:00[Europe/Belgrade]")
 public class People   {
   public static final String JSON_PROPERTY_NAME = "name";
   @JsonProperty(JSON_PROPERTY_NAME)
   private String name;
+
+  public static final String JSON_PROPERTY_SKIN_COLOR = "skin_color";
+  @JsonProperty(JSON_PROPERTY_SKIN_COLOR)
+  private String skinColor;
 
   public static final String JSON_PROPERTY_BIRTH_YEAR = "birth_year";
   @JsonProperty(JSON_PROPERTY_BIRTH_YEAR)
@@ -68,13 +80,37 @@ public class People   {
   @JsonProperty(JSON_PROPERTY_MASS)
   private String mass;
 
+  public static final String JSON_PROPERTY_URL = "url";
+  @JsonProperty(JSON_PROPERTY_URL)
+  private String url;
+
+  public static final String JSON_PROPERTY_CREATED = "created";
+  @JsonProperty(JSON_PROPERTY_CREATED)
+  private Date created;
+
+  public static final String JSON_PROPERTY_EDITED = "edited";
+  @JsonProperty(JSON_PROPERTY_EDITED)
+  private Date edited;
+
+  public static final String JSON_PROPERTY_HOMEWORLD = "homeworld";
+  @JsonProperty(JSON_PROPERTY_HOMEWORLD)
+  private String homeworld;
+
   public static final String JSON_PROPERTY_FILMS = "films";
   @JsonProperty(JSON_PROPERTY_FILMS)
   private List<String> films = null;
 
+  public static final String JSON_PROPERTY_SPECIES = "species";
+  @JsonProperty(JSON_PROPERTY_SPECIES)
+  private List<String> species = null;
+
   public static final String JSON_PROPERTY_STARSHIPS = "starships";
   @JsonProperty(JSON_PROPERTY_STARSHIPS)
   private List<String> starships = null;
+
+  public static final String JSON_PROPERTY_VEHICLES = "vehicles";
+  @JsonProperty(JSON_PROPERTY_VEHICLES)
+  private List<String> vehicles = null;
 
   public People name(String name) {
     this.name = name;
@@ -94,6 +130,26 @@ public class People   {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public People skinColor(String skinColor) {
+    this.skinColor = skinColor;
+    return this;
+  }
+
+  /**
+   * Get skinColor
+   * @return skinColor
+   **/
+  @JsonProperty("skin_color")
+  @ApiModelProperty(value = "")
+  
+  public String getSkinColor() {
+    return skinColor;
+  }
+
+  public void setSkinColor(String skinColor) {
+    this.skinColor = skinColor;
   }
 
   public People birthYear(String birthYear) {
@@ -216,6 +272,86 @@ public class People   {
     this.mass = mass;
   }
 
+  public People url(String url) {
+    this.url = url;
+    return this;
+  }
+
+  /**
+   * Get url
+   * @return url
+   **/
+  @JsonProperty("url")
+  @ApiModelProperty(value = "")
+  
+  public String getUrl() {
+    return url;
+  }
+
+  public void setUrl(String url) {
+    this.url = url;
+  }
+
+  public People created(Date created) {
+    this.created = created;
+    return this;
+  }
+
+  /**
+   * Get created
+   * @return created
+   **/
+  @JsonProperty("created")
+  @ApiModelProperty(value = "")
+  
+  public Date getCreated() {
+    return created;
+  }
+
+  public void setCreated(Date created) {
+    this.created = created;
+  }
+
+  public People edited(Date edited) {
+    this.edited = edited;
+    return this;
+  }
+
+  /**
+   * Get edited
+   * @return edited
+   **/
+  @JsonProperty("edited")
+  @ApiModelProperty(value = "")
+  
+  public Date getEdited() {
+    return edited;
+  }
+
+  public void setEdited(Date edited) {
+    this.edited = edited;
+  }
+
+  public People homeworld(String homeworld) {
+    this.homeworld = homeworld;
+    return this;
+  }
+
+  /**
+   * Get homeworld
+   * @return homeworld
+   **/
+  @JsonProperty("homeworld")
+  @ApiModelProperty(value = "")
+  
+  public String getHomeworld() {
+    return homeworld;
+  }
+
+  public void setHomeworld(String homeworld) {
+    this.homeworld = homeworld;
+  }
+
   public People films(List<String> films) {
     this.films = films;
     return this;
@@ -242,6 +378,34 @@ public class People   {
 
   public void setFilms(List<String> films) {
     this.films = films;
+  }
+
+  public People species(List<String> species) {
+    this.species = species;
+    return this;
+  }
+
+  public People addSpeciesItem(String speciesItem) {
+    if (this.species == null) {
+      this.species = new ArrayList<String>();
+    }
+    this.species.add(speciesItem);
+    return this;
+  }
+
+  /**
+   * Get species
+   * @return species
+   **/
+  @JsonProperty("species")
+  @ApiModelProperty(value = "")
+  
+  public List<String> getSpecies() {
+    return species;
+  }
+
+  public void setSpecies(List<String> species) {
+    this.species = species;
   }
 
   public People starships(List<String> starships) {
@@ -272,6 +436,34 @@ public class People   {
     this.starships = starships;
   }
 
+  public People vehicles(List<String> vehicles) {
+    this.vehicles = vehicles;
+    return this;
+  }
+
+  public People addVehiclesItem(String vehiclesItem) {
+    if (this.vehicles == null) {
+      this.vehicles = new ArrayList<String>();
+    }
+    this.vehicles.add(vehiclesItem);
+    return this;
+  }
+
+  /**
+   * Get vehicles
+   * @return vehicles
+   **/
+  @JsonProperty("vehicles")
+  @ApiModelProperty(value = "")
+  
+  public List<String> getVehicles() {
+    return vehicles;
+  }
+
+  public void setVehicles(List<String> vehicles) {
+    this.vehicles = vehicles;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -283,19 +475,26 @@ public class People   {
     }
     People people = (People) o;
     return Objects.equals(this.name, people.name) &&
+        Objects.equals(this.skinColor, people.skinColor) &&
         Objects.equals(this.birthYear, people.birthYear) &&
         Objects.equals(this.eyeColor, people.eyeColor) &&
         Objects.equals(this.gender, people.gender) &&
         Objects.equals(this.hairColor, people.hairColor) &&
         Objects.equals(this.height, people.height) &&
         Objects.equals(this.mass, people.mass) &&
+        Objects.equals(this.url, people.url) &&
+        Objects.equals(this.created, people.created) &&
+        Objects.equals(this.edited, people.edited) &&
+        Objects.equals(this.homeworld, people.homeworld) &&
         Objects.equals(this.films, people.films) &&
-        Objects.equals(this.starships, people.starships);
+        Objects.equals(this.species, people.species) &&
+        Objects.equals(this.starships, people.starships) &&
+        Objects.equals(this.vehicles, people.vehicles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, birthYear, eyeColor, gender, hairColor, height, mass, films, starships);
+    return Objects.hash(name, skinColor, birthYear, eyeColor, gender, hairColor, height, mass, url, created, edited, homeworld, films, species, starships, vehicles);
   }
 
 
@@ -305,14 +504,21 @@ public class People   {
     sb.append("class People {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    skinColor: ").append(toIndentedString(skinColor)).append("\n");
     sb.append("    birthYear: ").append(toIndentedString(birthYear)).append("\n");
     sb.append("    eyeColor: ").append(toIndentedString(eyeColor)).append("\n");
     sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
     sb.append("    hairColor: ").append(toIndentedString(hairColor)).append("\n");
     sb.append("    height: ").append(toIndentedString(height)).append("\n");
     sb.append("    mass: ").append(toIndentedString(mass)).append("\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
+    sb.append("    edited: ").append(toIndentedString(edited)).append("\n");
+    sb.append("    homeworld: ").append(toIndentedString(homeworld)).append("\n");
     sb.append("    films: ").append(toIndentedString(films)).append("\n");
+    sb.append("    species: ").append(toIndentedString(species)).append("\n");
     sb.append("    starships: ").append(toIndentedString(starships)).append("\n");
+    sb.append("    vehicles: ").append(toIndentedString(vehicles)).append("\n");
     sb.append("}");
     return sb.toString();
   }

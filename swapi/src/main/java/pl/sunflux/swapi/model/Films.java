@@ -35,7 +35,7 @@ import javax.validation.Valid;
   Films.JSON_PROPERTY_PRODUCER,
   Films.JSON_PROPERTY_STARSHIPS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2019-10-07T21:37:51.541+02:00[Europe/Belgrade]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen", date = "2019-10-07T23:20:46.085+02:00[Europe/Belgrade]")
 public class Films   {
   public static final String JSON_PROPERTY_TITLE = "title";
   @JsonProperty(JSON_PROPERTY_TITLE)
